@@ -1,0 +1,8 @@
+# ----- MMM setting config -----
+
+# get env information
+env: "sc2"
+# get task information
+task: "MultiSZtrans"
+# define train tasks and test tasks
+train_tasks: ['trans3s3z','2s3z','3s5z_vs_3s6z']

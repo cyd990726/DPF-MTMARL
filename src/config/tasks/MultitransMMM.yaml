@@ -1,0 +1,8 @@
+# ----- MMM setting config -----
+
+# get env information
+env: "sc2"
+# get task information
+task: "MultitransMMM"
+# define train tasks and test tasks
+train_tasks: ["MMM0", "MMM2", "MMM4"]

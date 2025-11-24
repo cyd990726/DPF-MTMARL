@@ -1,0 +1,8 @@
+
+env: grid_env
+
+task: "full_vision"
+
+train_tasks: ["2", "4", "7", "9"]
+test_task: ["8"]
+test_tasks: ["3", "8"]

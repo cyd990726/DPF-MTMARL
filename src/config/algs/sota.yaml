@@ -1,0 +1,36 @@
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "dc_learner"
+double_q: True
+mixer: "attn2_h"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+name: "sota"
+
+# agent type
+agent: "sota"
+
+# mac
+mac: "basic_dc_mac"
+
+# params about observation decomposition
+id_length: 4
+max_agent: 15
+
+# params about trans mixing network
+entity_embed_dim: 64
+attn_embed_dim: 8

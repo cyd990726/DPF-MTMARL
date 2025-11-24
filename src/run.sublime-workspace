@@ -1,0 +1,975 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"de",
+				"detach"
+			],
+			[
+				"ta",
+				"target_mixer"
+			],
+			[
+				"m",
+				"mixer"
+			],
+			[
+				"re",
+				"reshape"
+			],
+			[
+				"year",
+				"year_df"
+			],
+			[
+				"C",
+				"CLUSTER_NUMS"
+			],
+			[
+				"user_train_op",
+				"user_train_op2"
+			],
+			[
+				"reduce",
+				"reduce_sum"
+			],
+			[
+				"las",
+				"last_state_entropy"
+			],
+			[
+				"user_cl",
+				"user_cluster_map"
+			],
+			[
+				"bat",
+				"batch_users"
+			],
+			[
+				"M",
+				"MAX_STEPS"
+			],
+			[
+				"rewa",
+				"reward2"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"ini",
+				"init_bias_meta_head"
+			],
+			[
+				"ass",
+				"assign"
+			],
+			[
+				"target_q",
+				"target_bias_q_value"
+			],
+			[
+				"I",
+				"ITEM_SIZE"
+			],
+			[
+				"item_",
+				"item_count"
+			],
+			[
+				"user",
+				"user_count"
+			],
+			[
+				"sa",
+				"saved_model"
+			],
+			[
+				"st",
+				"stop_gradient"
+			],
+			[
+				"e",
+				"eval_q_value"
+			],
+			[
+				"ba",
+				"batch_users_nb"
+			],
+			[
+				"meta",
+				"metaAltTrainBatchHQlearning"
+			],
+			[
+				"va",
+				"values"
+			],
+			[
+				"me",
+				"meta_weights"
+			],
+			[
+				"tra",
+				"train_user_id"
+			],
+			[
+				"item",
+				"item_nb"
+			],
+			[
+				"i",
+				"item_nb"
+			],
+			[
+				"po",
+				"pos_state"
+			],
+			[
+				"ne",
+				"neg_user_nb"
+			],
+			[
+				"H",
+				"HIDDEN_LAYER_SIZE"
+			],
+			[
+				"E",
+				"EMBEDDING_SIZE"
+			],
+			[
+				"get",
+				"get_shape"
+			],
+			[
+				"dense",
+				"dense_1"
+			],
+			[
+				"lo",
+				"losses"
+			],
+			[
+				"ma",
+				"matmul"
+			],
+			[
+				"g",
+				"goals"
+			],
+			[
+				"go",
+				"goal_lr"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"f",
+				"float32"
+			],
+			[
+				"goa",
+				"GOAL_SIZE"
+			],
+			[
+				"u",
+				"user_nb"
+			],
+			[
+				"G",
+				"GOAL_SIZE"
+			],
+			[
+				"co",
+				"copy"
+			],
+			[
+				"lhs",
+				"lhs_node"
+			],
+			[
+				"rh",
+				"rhs_node"
+			],
+			[
+				"lh",
+				"lhs_node"
+			],
+			[
+				"ac",
+				"action_q"
+			],
+			[
+				"with",
+				"withgoal"
+			],
+			[
+				"s",
+				"start_traing_goal2"
+			],
+			[
+				"r",
+				"range"
+			],
+			[
+				"c",
+				"choose_action"
+			],
+			[
+				"num_",
+				"num_items"
+			],
+			[
+				"int",
+				"interactions"
+			],
+			[
+				"var",
+				"var_list"
+			],
+			[
+				"bi",
+				"bi_var"
+			],
+			[
+				"em",
+				"embedding_lookup"
+			],
+			[
+				"b",
+				"binary_crossentropy"
+			],
+			[
+				"cho",
+				"choosed_items"
+			],
+			[
+				"age",
+				"agent_nb"
+			],
+			[
+				"A",
+				"ANGENT_NUM"
+			],
+			[
+				"QNetSeparateWithGru_v",
+				"QNetSeparateWithGru_v3"
+			],
+			[
+				"agen",
+				"agent_nb"
+			],
+			[
+				"agent",
+				"agent_nb"
+			],
+			[
+				"Ta",
+				"TAU_placeholder"
+			],
+			[
+				"fe",
+				"feed_dict"
+			],
+			[
+				"a",
+				"assign"
+			],
+			[
+				"T",
+				"TOP_K"
+			],
+			[
+				"tar",
+				"target_q"
+			],
+			[
+				"v",
+				"v_next"
+			],
+			[
+				"redu",
+				"reduce_sum"
+			],
+			[
+				"squ",
+				"squeeze"
+			],
+			[
+				"is",
+				"isV"
+			],
+			[
+				"agent_",
+				"agent_num"
+			],
+			[
+				"obs",
+				"obs_n"
+			],
+			[
+				"good",
+				"good_agents"
+			],
+			[
+				"ag",
+				"agent"
+			],
+			[
+				"att",
+				"role_attacker"
+			],
+			[
+				"p",
+				"pickle"
+			],
+			[
+				"state",
+				"state_i"
+			],
+			[
+				"dz",
+				"dzList"
+			],
+			[
+				"ve",
+				"vertial_bin_nb"
+			],
+			[
+				"ho",
+				"horizontal_bin_nb"
+			],
+			[
+				"B",
+				"B_BOUND"
+			],
+			[
+				"action",
+				"action_n"
+			],
+			[
+				"rel",
+				"replay_buffer"
+			],
+			[
+				"to",
+				"topK"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 7984,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/╪Ррвк╣цВнд╣╣.txt",
+			"settings":
+			{
+				"buffer_size": 2426,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "controllers/basic_controller.py",
+			"settings":
+			{
+				"buffer_size": 4411,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "controllers/basic_dc_controller.py",
+			"settings":
+			{
+				"buffer_size": 5264,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "config/algs/xtrans_train_beta.yaml",
+			"settings":
+			{
+				"buffer_size": 1110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/algs/xmeta_test_beta.yaml",
+			"settings":
+			{
+				"buffer_size": 1159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/default.yaml",
+			"settings":
+			{
+				"buffer_size": 2124,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 124.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/outputs",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/components",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/config",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/config/algs",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/controllers",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/runners",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/utils"
+	],
+	"file_history":
+	[
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/controllers/basic_dc_controller.py",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/controllers/basic_controller.py",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/config/algs/xmeta_test_beta.yaml",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/results/sacred/_sources/main_47609cf6f2e2283d1ce729184e9ed676.py",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/install_sc2.sh",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/test_run.sh",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/run.sh",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/run_interactive.sh",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/new_maps.zip",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/LICENSE",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/╪Ррвк╣цВнд╣╣.txt",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/main.py",
+		"/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/src/meta_test_run.py",
+		"/Users/fms/Documents/pymrl/pymarl/src/learners/__init__.py",
+		"/Users/fms/Documents/pymrl/pymarl/src/learners/q_learner.py",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qplex/log-MMM2-qplex-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qplex/log-MMM2-qplex-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qplex/log-MMM2-qplex-3.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qplex/log-MMM2-qplex-2.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qplex/log-MMM2-qplex-1.out",
+		"/Users/fms/Documents/meta-rl-TII/src/meta_rating.py",
+		"/Volumes/My Passport for Mac/fms_nus_server_back/MA/src2/model.py",
+		"/Users/fms/Downloads/LightWAN5.3.4_Native+iKEv2_20220805/dispatch",
+		"/Users/fms/Downloads/gui-config (6).json",
+		"/Users/fms/Documents/meta-rl-TII/final/TII/multi-policy-RL-RS/src/main.py",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/parse-result.py",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/dmix/log-dmix-mmm2-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/dmix/log-dmix-mmm2-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/dmix/log-dmix-mmm2-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qmix/log-MMM2-qmix-3.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qmix/log-MMM2-qmix-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qmix/log-MMM2-qmix-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qr/log-mmm2-aqr-new-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qr/log-mmm2-aqr-new-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qr/log-mmm2-aqr-new-3.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qr/log-mmm2-aqr-new-2.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/MMM2/qr/log-mmm2-aqr-new-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/27m_vs_30m/qmix/log-27mvs30m-qmix-2.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/27m_vs_30m/qmix/log-27mvs30m-qmix-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/27m_vs_30m/qr/log-27mvs30m-aqr-new-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/27m_vs_30m/qr/log-27mvs30m-aqr-new-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qr/log-3s5z-aqr-new-5.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qr/log-3s5z-aqr-new-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qr/log-3s5z-aqr-new-3.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qr/log-3s5z-aqr-new-2.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qr/log-3s5z-aqr-new-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/dmix/log-dmix-3s5z-4.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/dmix/log-dmix-3s5z-3.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/dmix/log-dmix-3s5z-2.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/dmix/log-dmix-3s5z-1.out",
+		"/Users/fms/Documents/pymrl/pymarl/results for aqr/3s5z/qmix/log-3s5z-qmix-1.out",
+		"/Users/fms/Documents/H-RES/src/meta_10m_config.py",
+		"/Users/fms/Documents/H-RES/src/ddpg_10m_config.py",
+		"/Users/fms/Documents/H-RES/src/meta_anime_config.py",
+		"/Users/fms/Documents/H-RES/src/meta_lastfm_config.py",
+		"/Users/fms/Documents/H-RES/src/meta_steam_config.py",
+		"/Users/fms/Documents/H-RES/src/meta_net_config.py",
+		"/Users/fms/Documents/H-RES/src/meta_config.py",
+		"/Users/fms/Documents/H-RES/src/MetaDQN_back.py",
+		"/Users/fms/Documents/H-RES/src/meta_rating_back.py",
+		"/Users/fms/Documents/H-RES/src/meta_an.py",
+		"/Users/fms/Documents/H-RES/src/meta_fm.py",
+		"/Users/fms/Documents/H-RES/src/meta_st.py",
+		"/Users/fms/Documents/H-RES/src/meta_nf.py",
+		"/Users/fms/Documents/H-RES/src/data_utils.py",
+		"/Users/fms/Documents/H-RES/src/meta_rating3.py",
+		"/Users/fms/Documents/H-RES/src/config_mooc.py",
+		"/Users/fms/Documents/H-RES/src/meta_mc.py",
+		"/Users/fms/Documents/H-RES/src/meta_1m.py",
+		"/Users/fms/Documents/H-RES/src/meta_rating.py",
+		"/Users/fms/Documents/H-RES/src/MetaDQN.py",
+		"/Users/fms/Documents/H-RES/src/MetaDQN3.py",
+		"/Users/fms/Documents/H-RES/src/DDPG.py",
+		"/Users/fms/Documents/H-RES/src/model.py",
+		"/Users/fms/Documents/H-RES/src/ddpg_config.py",
+		"/Users/fms/Documents/H-RES/src/ddpg_netflix_config.py",
+		"/Users/fms/Documents/H-RES/src/ddpg_20m_config.py",
+		"/Users/fms/Documents/H-RES/src/config_20m.py",
+		"/Users/fms/Documents/H-RES/src/spider.py",
+		"/Users/fms/Documents/H-RES/src/config.py",
+		"/Users/fms/Documents/H-RES/src/config_10m.py",
+		"/Users/fms/Documents/H-RES/src/new_train.py",
+		"/Users/fms/Documents/H-RES/src/config_netflix.py",
+		"/Users/fms/Documents/H-RES/src/train-netflix.py",
+		"/Users/fms/Documents/H-RES/src/memory.py",
+		"/Users/fms/Documents/H-RES/src/train-20m.py",
+		"/Users/fms/Documents/H-RES/src/train-10m.py",
+		"/Users/fms/Documents/H-RES/src/train.py",
+		"/Users/fms/Documents/H-RES/src/train-netflix-DDPG.py",
+		"/Users/fms/Documents/H-RES/src/train-20m-DDPG.py",
+		"/Users/fms/Documents/H-RES/src/train-10m-DDPG.py",
+		"/Users/fms/Documents/H-RES/src/train-DDPG.py",
+		"/Users/fms/Documents/H-RES/src/train-mooc.py",
+		"/Users/fms/Documents/H-RES/src/meta_rating2.py",
+		"/Users/fms/Documents/H-RES/src/bpr.py",
+		"/Users/fms/Documents/H-RES/src/meta-train-10m.py",
+		"/Users/fms/Documents/H-RES/src/meta-train.py",
+		"/Users/fms/Documents/H-RES/src/ddpg_mooc_config.py",
+		"/Users/fms/Documents/H-RES/src/train-ciao.py",
+		"/Users/fms/Documents/H-RES/src/config_ciao.py",
+		"/Users/fms/Documents/H-RES/src/train-mooc-DDPG.py",
+		"/Users/fms/Documents/H-RES/src/config_10m_ddpg.py",
+		"/Users/fms/Documents/H-RES/src/train-single-v2.py",
+		"/Users/fms/Documents/H-RES/TPGR-master/src/tpgr.py",
+		"/Users/fms/Documents/H-RES/TPGR-master/src/env.py",
+		"/Users/fms/Documents/H-RES/TPGR-master/src/main.py",
+		"/Users/fms/Documents/H-RES/TPGR-master/src/recommender.py",
+		"/Users/fms/Documents/H-RES/src/train-single.py",
+		"/Users/fms/Documents/MA_RES/src/train.py",
+		"/Users/fms/Documents/MA_RES/src/mamodel.py",
+		"/Users/fms/Documents/H-RES/src/train-drop.py",
+		"/Users/fms/Documents/H-RES/src/dual_model.py",
+		"/Users/fms/Documents/H-RES/src/config_dropout.py",
+		"/Users/fms/Documents/H-RES/TPGR-master/data/rating/1m_re_raw",
+		"/Users/fms/Downloads/ml-1m/parse_dataset.py",
+		"/Users/fms/Documents/H-RES/src/train-dual-g.py",
+		"/Users/fms/Documents/H-RES/src/mamodel.py",
+		"/Users/fms/Documents/H-RES/src/config-mooc.py",
+		"/Volumes/transfer/fms_source_code/cfnet14.py",
+		"/Users/fms/Downloads/ncf/bilayer.py",
+		"/Users/fms/Downloads/DEERS/src/memory.py",
+		"/Users/fms/Downloads/maddpg-master/maddpg/vmreplay_buffer.py",
+		"/Users/fms/Downloads/maddpg-master/maddpg/replay_buffer.py",
+		"/Users/fms/Downloads/multiagent-particle-envs-master/multiagent/scenarios/simple_search.py",
+		"/Users/fms/Downloads/Denfence_v3/maddpg-master/maddpg/maddpg.py",
+		"/Users/fms/Downloads/apiIntegration-master-63ef8db34342e6b2a8481dcb2397c370e6a61ec1/src/main/webapp/apiManagement/home.html",
+		"/Users/fms/Downloads/apiIntegration-master-63ef8db34342e6b2a8481dcb2397c370e6a61ec1/src/main/webapp/apiManagement/apiAdd.html",
+		"/Users/fms/Downloads/apiIntegration-master-63ef8db34342e6b2a8481dcb2397c370e6a61ec1/src/main/resources/mongodb.properties"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"xtrans_train_beta ",
+			"sota_beta"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6827,
+								6827
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2398.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/fms/Documents/2023/2022符明晟xx6项目/transfer_marl/╪Ррвк╣цВнд╣╣.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2117,
+								2254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 116.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "controllers/basic_controller.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4411,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								457,
+								457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "controllers/basic_dc_controller.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								452,
+								452
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/algs/xtrans_train_beta.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/algs/xmeta_test_beta.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "config/default.yaml",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "run.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"install_sc2.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 340.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

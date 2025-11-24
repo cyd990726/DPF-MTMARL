@@ -1,0 +1,10 @@
+# ----- MMM setting config -----
+
+# get env information
+env: "sc2"
+# get task information
+task: "MMM"
+# define train tasks and test tasks
+train_tasks: ["MMM", "MMM2", "MMM4"]
+test_task: "MMM"
+test_tasks: ["MMM0", "MMM", "MMM1", "MMM2", "MMM3", "MMM4"]

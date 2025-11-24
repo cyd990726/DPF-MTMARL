@@ -1,0 +1,10 @@
+# ----- MMM setting config -----
+
+# get env information
+env: "sc2"
+# get task information
+task: "transMMM"
+# define train tasks and test tasks
+train_tasks: ["trans127"]
+test_task: "trans128"
+#test_tasks: ["trans3s5z"]

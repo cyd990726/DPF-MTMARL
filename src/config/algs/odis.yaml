@@ -1,0 +1,71 @@
+# --- XTrans train specific parameters ---
+
+# determine whether meta_train or meta_test
+meta_train: True
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "mt_parallel"
+batch_size_run: 2
+batch_size: 16
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "odis_learner"
+double_q: True
+mixer: "mt_qattn"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+agent: "mt_odis"
+
+# params about observation decomposition
+id_length: 4
+max_agent: 15
+
+# params about task_encoder
+dynamic_encoder: "mt_pooling"
+dynamic_decoder: "mlp"
+task_repre_dim: 32
+
+state_latent_dim: 32  # 10
+
+pretrain: False
+dynamic_learning_end: 1
+save_repre: True
+save_repre_interval: 1000
+only_repre_learning: False
+
+
+# params about trans mixing network
+entity_embed_dim: 64
+attn_embed_dim: 8
+skill_dim: 3
+c_step: 1
+beta: 0.001
+coef_conservative: 5.0
+coef_dist: 5.0
+pretrain_steps: 1
+
+head: 1
+depth: 1
+
+# mac
+mac: "mt_odis_mac"
+
+# params related with transfer training
+breakpoint_training: False
+
+save_model_interval: 200000
+
+name: "odis_train"

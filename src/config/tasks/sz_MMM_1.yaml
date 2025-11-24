@@ -1,0 +1,10 @@
+# ----- stalkers and zealots setting config -----
+
+# get env information
+env: "sc2"
+# get task information
+task: "sz_MMM_1"
+# define train tasks and test tasks
+train_tasks: ["3s3z", "3s5z", "3s5z_vs_3s6z", "MMM2"]
+test_task: "3s5z_vs_3s7z"
+test_tasks: ["2s3z", "2s3z_vs_2s4z", "3s4z", "3s5z", "3s5z_vs_3s6z", "3s5z_vs_3s7z", "4s7z", "4s7z_vs_4s8z", "4s7z_vs_4s9z"]

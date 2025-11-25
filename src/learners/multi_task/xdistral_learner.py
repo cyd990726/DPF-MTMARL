@@ -16,9 +16,7 @@ import numpy as np
 import torch.nn.functional as F
 
 class XDistralLearner:
-    '修改开始：cyd'
     def __init__(self, mac, logger, main_args):
-        '修改结束：cyd'
         # # 保存传入的参数
         self.main_args = main_args
         self.mac = mac
@@ -37,8 +35,6 @@ class XDistralLearner:
         # 根据main_args.mixer的值来选择混合器（mixer）
         self.mixer = None
         
-        '修改开始：cyd'
-        # 为Πi定义一组mixer
         # main_args_copy = copy.deepcopy(main_args)
         self.pi_mixers = {}
         for task_name in self.task2args:
@@ -63,13 +59,10 @@ class XDistralLearner:
             self.params += list(self.mixer.parameters())  # 将混合器的参数加入到params中
             self.target_mixer = copy.deepcopy(self.mixer)  # 深拷贝混合器
 
-
-            '修改开始：cyd'
             # 定义一组目标混合网络
             self.target_pi_mixers = {}
             for task_name in self.task2args:
                 self.target_pi_mixers[task_name] = copy.deepcopy(self.pi_mixers[task_name])
-            '修改结束：cyd'
         
         #设置mac里面pi_0和pi_i的权重，用于决策
         self.mac.pi_0_mixer = copy.deepcopy(self.mixer)
@@ -78,7 +71,6 @@ class XDistralLearner:
         self.optimiser = RMSprop(params=self.params, lr=main_args.lr, alpha=main_args.optim_alpha,
                                  eps=main_args.optim_eps)
         
-        '修改开始：cyd'
         # 定义一个字典存储pi_i的参数, 把混合器的参数加入params中
         self.param_pi_is = {}
         for task_name in self.task2args:
@@ -88,8 +80,6 @@ class XDistralLearner:
         self.optimiser_pi_is = {}
         for task_name in self.task2args:
             self.optimiser_pi_is[task_name] = RMSprop(params=self.param_pi_is[task_name], lr=main_args.lr, alpha=main_args.optim_alpha, eps=main_args.optim_eps)
-        
-        '修改结束：cyd'
 
 
         # 定义target_mac
@@ -188,7 +178,6 @@ class XDistralLearner:
 
 
     
-    # 整个td的过程实际上是soft_qlearning+正则项
     def optimize_pi_0(self, batch: EpisodeBatch, t_env: int, episode_num: int, task: str):
         # Get the relevant quantities
         rewards = batch["reward"][:, :-1]
@@ -252,8 +241,6 @@ class XDistralLearner:
         # Normal L2 loss, take mean over actual data
         td_loss = (masked_td_error ** 2).sum() / mask.sum()
         
-       
-        # 计算正则项损失
         re_loss = self.cal_res_loss(batch, pi_0_chosen_action_qvals)
 
         loss = td_loss + re_loss*self.main_args.lamda
@@ -269,9 +256,7 @@ class XDistralLearner:
             grad_norm = grad_norm.item()
         except:
             pass
-       
 
-        # 如果当前环境步数减去上一次记录训练信息的环境步数大于或等于学习日志间隔，那么就记录一些训练信息，包括损失、梯度范数、绝对TD误差、选择的动作的Q值的均值和目标的均值。
         if t_env - self.task2train_info[task]["log_stats_t"] >= self.task2args[task].learner_log_interval:
             self.logger.log_stat(f"{task}/loss", loss.item(), t_env)
             self.logger.log_stat(f"{task}/grad_norm", grad_norm, t_env)
@@ -284,12 +269,8 @@ class XDistralLearner:
             # self.task2train_info[task]["log_stats_t"] = t_env
 
    
-        
-    # 固定pi_0优化每个环境的单独的pi_i
-    # 优化pi_i的过程
     def optimize_pi_i(self, batch: EpisodeBatch, t_env: int, episode_num: int, task: str):
         # Get the relevant quantities
-        # reward直接除以智能体数目，后面计算next_qvals时会进行广播
         rewards = batch["reward"][:, :-1] # tensor(32, 65, 1)
         actions = batch["actions"][:, :-1]  # tensor(32, 65, 10, 1)
         terminated = batch["terminated"][:, :-1].float()  # tensor(32, 65, 1)
@@ -297,9 +278,6 @@ class XDistralLearner:
         mask[:, 1:] = mask[:, 1:] * (1 - terminated[:, :-1])
         avail_actions = batch["avail_actions"]  # tensor(32, 66, 10, 18)
 
-        
-        # 1. 计算当前状态的Q(mixer级别)
-        ## 计算当前状态pi_i的Q值
         mac_out = []
         self.mac.init_hidden(batch.batch_size, task)
         for t in range(batch.max_seq_length):
@@ -307,30 +285,23 @@ class XDistralLearner:
             mac_out.append(agent_outs)
         mac_out = th.stack(mac_out, dim=1)  # Concat over time tensor:(32, 68 , 10, 18)      
         
-        ## 根据动作选出每个智能体的Q值，注意这里是去掉序列最后一个，算target_val的时候是去掉的第一个，因为计算target_val的时候用的是next_state
         chosen_action_qvals = th.gather(mac_out[:, :-1], dim=3, index=actions).squeeze(3)  # tensor(32, 67, 10)
-        ## 获取batch_size和seq_len
+
         bs, seq_len = chosen_action_qvals.size(0), chosen_action_qvals.size(1)
-        ## 获取任务表征
         task_repre = self.mac.get_task_repres(task, require_grad=False)[None, None, ...].repeat(bs, seq_len, 1, 1)
         
         if self.pi_mixers[task] is not None:
-            # 经过混合网络得到Q_tot
             chosen_action_qvals = self.pi_mixers[task](chosen_action_qvals, batch["state"][:, :-1]) #tensor(32, 69, 1)
         
-        # 2. 计算next_state_val(在target_mac上)
-        ## 先计算pi_0（agent级别），pi_0还是在mac上计算
         p_mac_out = []
         self.mac.init_hidden(batch.batch_size, task)
         for t in range(batch.max_seq_length):
             agent_outs = self.mac.forward(batch, t=t, task=task)  # tensor(32, 10, 18)
             p_mac_out.append(agent_outs)
         
-        '''改一下，改成1：'''
         p_mac_out = th.stack(p_mac_out[1:], dim=1)  # Concat over time tensor:(32, 68 , 10, 18)
 
         
-        ## 在计算next_qval，pi在target_mac上
         next_mac_out = []
         self.target_mac.init_hidden(batch.batch_size, task)
         for t in range(batch.max_seq_length):
@@ -340,15 +311,11 @@ class XDistralLearner:
         next_mac_out = th.stack(next_mac_out[1:], dim=1)  # tensor（32，69，10，18）
         next_mac_out[avail_actions[:, 1:] == 0] = -9999999
         
-        ## 通过max算子得到下一个状态的最大Q值动作
         next_state_maxq_action = next_mac_out.max(dim=3)[1] #tensor(32, 69, 10)
 
-        # 动作数和智能体数目
         action_num = next_mac_out.shape[-1] #18
         agent_num = next_mac_out.shape[2] # 10
         
-        # 构建近似联合动作空间
-        # 采样数变为原来的1/4
         action_space = []
         for agent in range(agent_num):
             for t in range(0, action_num, 4):
@@ -362,7 +329,6 @@ class XDistralLearner:
                     a[:, :, agent] %= action_num
                     action_space.append(a)
         
-        # 遍历近似动作空间中的每一个动作计算pi_0
         pi_0_s = []
         for action in action_space:
             action = action.unsqueeze(-1)
@@ -371,7 +337,6 @@ class XDistralLearner:
             bs, seq_len = pi_0.size(0), pi_0.size(1)
             task_repre = self.mac.get_task_repres(task, require_grad=False)[None, None, ...].repeat(bs, seq_len, 1, 1)
             if self.mixer is not None:
-                '''改一下，改成1：'''
                 pi_0 = self.mixer(pi_0, batch["state"][:, 1:], task_repre, self.task2decomposer[task])
                 
             pi_0_s.append(pi_0)
@@ -392,8 +357,6 @@ class XDistralLearner:
             bs, seq_len = Q_i.size(0), Q_i.size(1)
             task_repre = self.target_mac.get_task_repres(task, require_grad=False)[None, None, ...].repeat(bs, seq_len, 1, 1)
             if self.target_pi_mixers[task] is not None:
-                '''这里也改成1：'''
-                '''之前忘记改了，现在改一下也不晚，跑两个sz和marine试试'''
                 Q_i = self.target_pi_mixers[task](Q_i, batch["state"][:, 1:])
             
             # 根据公式计算
@@ -438,8 +401,7 @@ class XDistralLearner:
             self.last_target_update_episode = episode_num
         if t_env - self.task2train_info[task]["log_stats_t"] >= self.task2args[task].learner_log_interval:
             self.task2train_info[task]["log_stats_t"] = t_env
-    '修改开始：cyd'
-    # 更新目标网络
+
     def _update_targets(self):
         self.target_mac.load_state(self.mac)
         if self.mixer is not None:
@@ -470,65 +432,57 @@ class XDistralLearner:
         self.mac.save_models(path)
         if self.mixer is not None:
             th.save(self.mixer.state_dict(), "{}/mixer.th".format(path))
-        
-        # 保存pi_mixer
+
         for task_name in self.task2args:
             if self.pi_mixers[task_name] is not None:
                 th.save(self.pi_mixers[task_name].state_dict(), "{}/{}_mixer.th".format(path, task_name))
         
         th.save(self.optimiser.state_dict(), "{}/opt.th".format(path))
-        # 保存新定义的一组优化器
         for task_name in self.task2args:
             th.save(self.optimiser_pi_is[task_name].state_dict(), "{}/{}_opt.th".format(path, task_name))
 
-    # 只需要加载pi_0即可
+
     def load_models(self, path):
         self.mac.load_models(path)
         # Not quite right but I don't want to save target networks
         self.target_mac.load_models(path)
         if self.mixer is not None:
             self.mixer.load_state_dict(th.load("{}/mixer.th".format(path), map_location=lambda storage, loc: storage))
-        # 加载pi_mixer
+
         for task_name in self.task2args:
             if self.pi_mixers[task_name] is not None:
                 self.pi_mixers[task_name].load_state_dict(th.load("{}/{}_mixer.th".format(path, task_name), map_location=lambda storage, loc: storage))
         
         self.optimiser.load_state_dict(th.load("{}/opt.th".format(path), map_location=lambda storage, loc: storage))
-        # 加载各个任务的优化器
+
         for task_name in self.task2args:
             self.optimiser_pi_is[task_name].load_state_dict(th.load("{}/{}_opt.th".format(path, task_name), map_location=lambda storage, loc: storage))
 
 
     def kl_divergence_loss(self, q_t, q_s, temperature, alpha=0.5):
-        # 将教师和学生的动作价值估计除以温度参数，让分布更平滑
+
         q_t = q_t / temperature
         q_s = q_s / temperature
 
-        # 使用softmax函数计算概率分布
         p_t = th.nn.functional.softmax(q_t, dim=-1)
         p_s = th.nn.functional.softmax(q_s, dim=-1)
 
-        # 计算教师和学生概率分布的对数
         log_p_t = th.nn.functional.log_softmax(q_t, dim=-1)
         log_p_s = th.nn.functional.log_softmax(q_s, dim=-1)
 
-        # 计算教师和学生概率分布之间的KL散度
         kl_div_ts = th.sum(p_t * (log_p_t - log_p_s), dim=-1)
         kl_div_st = th.sum(p_s * (log_p_s - log_p_t), dim=-1)
 
-        # 计算Jeffrey's散度损失
         loss = (alpha * kl_div_ts) + ((1.0 - alpha) * kl_div_st)
 
         return loss
 
-    # 计算正则项损失
     def cal_res_loss(self, batch, q_vals):
         rewards = batch["reward"][:, :-1]
         actions = batch["actions"][:, :-1]
         terminated = batch["terminated"][:, :-1].float()
         mask = batch["filled"][:, :-1].float()
         mask[:, 1:] = mask[:, 1:] * (1 - terminated[:, :-1])
-        # 还得计算一下正则项
         base_line = copy.deepcopy(rewards)
         seq_len = base_line.shape[1]
         for t_inx  in range(seq_len):
@@ -541,20 +495,16 @@ class XDistralLearner:
         return re_loss*self.main_args.lamda
     
     def bolz_policy(self, pi_0_mac_out, pi_i_mac_out):
-         # 导出增强策略
         pi0 = th.nn.functional.softmax(pi_0_mac_out[:, :-1], dim=-1) # tensor(2, 12, 20)
         pi0 = pi0.detach()
         Q = pi_i_mac_out.detach()
         
         V = th.log((th.pow(pi0, self.main_args.alpha)*th.exp(self.main_args.beta*Q)).sum(-1))/self.main_args.beta # tensor(2, 12)
         
-        #对V进行扩展让V最后一个维度和Q相同
         vsz = V.size()
         V = V.unsqueeze(-1)
         V = V.expand(*vsz, Q.shape[-1])
         
-        # 导出增强策略
         bolz_policy = th.pow(pi0, self.main_args.alpha)* th.exp(self.main_args.beta*(Q-V))
 
-        # bolz_policy_chose_maxq_action = bolz_policy.max(dim=3)[1] #tensor(32, 69, 10)
         return bolz_policy

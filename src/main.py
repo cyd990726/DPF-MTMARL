@@ -53,8 +53,6 @@ def my_main(_run, _config, _log):
             xdistral_train_run(_run, config, _log)
         elif config.get("name") == "original_distral":
             original_distral_run(_run, config, _log)
-        elif config.get("name") == "xdistral_weight_train":
-            xdistral_train_run(_run, config, _log)
     elif config.get("meta_test", False):  # 检查配置中是否有meta_test字段,如果没有则默认为False
         meta_test_run(_run, config, _log)  # 如果meta_test=True,则调用meta_test_run函数运行meta测试逻辑
 

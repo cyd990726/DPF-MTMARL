@@ -1,7 +1,7 @@
 # DPF-MTMARL
 
 ## Code framework
-PF-MTMARL: Dual-Policy Fusion for Multi-Task Multi-Agent Reinforcement Learning
+DPF-MTMARL: Dual-Policy Fusion for Multi-Task Multi-Agent Reinforcement Learning
 
 This repository is based on the PyMARL (https://github.com/oxwhirl/pymarl). For the installation instructions, pls refer to PyMARL.
 
